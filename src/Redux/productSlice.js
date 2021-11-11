@@ -1,13 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { client } from '../common/client';
 export const fetchProduct = createAsyncThunk("product/fetchProduct", async() => {
-    return await client.get('http://localhost:5000/products')
+    return await client.get('https://my-json-server.typicode.com/mohammadmalekiii/api/products')
 })
 export const fetchSelectProduct = createAsyncThunk("products/fetchSelectProduct", async(id) => {
-    return await client.get(`http://localhost:5000/products/${id}`)
+    return await client.get(`https://my-json-server.typicode.com/mohammadmalekiii/api/products/${id}`)
 })
 export const fetchSearchProduct = createAsyncThunk("products/fetchSearchProduct", async(search) => {
-    return await client.get(`http://localhost:5000/products?q=${search}`)
+    return await client.get(`https://my-json-server.typicode.com/mohammadmalekiii/api/products?q=${search}`)
 })
 
 const initialState = {
